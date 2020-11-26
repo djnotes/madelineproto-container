@@ -31,7 +31,11 @@
      $api->loop(function() use ($api, $username){
          yield $api->start();
          
-         yield $api->messages->sendMessage(['peer' => $username, 'message' => 'Hello from MadelineProto']);
+         try{
+             yield $api->messages->sendMessage(['peer' => $username, 'message' => 'Hello from MadelineProto']);
+         }catch(\danog\MadelineProto\Exception $e){
+             echo $e->getMessage();
+         }
      });
  
  

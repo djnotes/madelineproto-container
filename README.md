@@ -9,7 +9,7 @@ To get started run:
 
 ```
 
-docker run --rm --name hello-madelineproto -ti -v `pwd`:/app:Z  powergame/madelineproto-container telegram_username
+docker run --rm --name hello-madelineproto -ti -v `pwd`:/app:Z  powergame/madelineproto-container your_telegram_username
 
 ```  
 
@@ -21,5 +21,5 @@ To run a custom script, just put it in the current directory and run the followi
 
 
 ```
-docker run --rm --name hello-madelineproto -ti -v `pwd`:/app:Z  --entrypoint php powergame/madelineproto-container your_bot_script.php  
+docker run --rm --name hello-madelineproto -ti -v `pwd`:/app:Z  --entrypoint php powergame/madelineproto-container your_bot_script.php
 ```
