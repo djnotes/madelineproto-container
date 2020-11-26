@@ -1,0 +1,4 @@
+*.phar
+*.phar.version
+*.madeline
+*.lock

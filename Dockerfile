@@ -11,5 +11,7 @@ COPY   . /app
 WORKDIR /app
 
 
-CMD [php /app/bot.php]
+ENTRYPOINT ["php", "/app/bot.php"]
+
+
 

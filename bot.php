@@ -1,12 +1,15 @@
 <?php
      
 
-     if(!isset($argv[2])){
-        echo "Username not specified. Usage: php script username \n";
+     print_r($argv);
+
+
+     if(!isset($argv[1])){
+        echo "Username not specified. Usage: script username \n";
         exit(1);
     }
 
-    $username = $argv[2];
+    $username = $argv[1];
 
      if (!file_exists('madeline.php')){
          copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
