@@ -5,7 +5,11 @@ All the MadelineProto requirements are already installed in this image. You can 
 
 To get started run:   
 
-`docker run --rm --name hello-madelineproto -ti -v `pwd`:/app:Z  powergame/madelineproto-container telegram_username`  
+```
+
+docker run --rm --name hello-madelineproto -ti -v `pwd`:/app:Z  powergame/madelineproto-container telegram_username
+
+```  
 
 This will start MadelineProto, help you log in to your account and send a test message to the telegram_username you specified on the command line.  
 
