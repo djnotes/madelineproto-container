@@ -1,7 +1,9 @@
 # MadelineProto Container Image
 
-An easy way to get started with MadelineProto.
-All the MadelineProto requirements are already installed in this image. You can use this image with Docker or Podman. GitHub hosts the code, but the image is on Docker Hub.   
+## Features 
+- An easy way to get started with MadelineProto.
+- All the MadelineProto requirements are already installed in this image.
+-  You can use this image with Docker or Podman. GitHub hosts the code, but the image is on Docker Hub.   
 
 To get started run:   
 
