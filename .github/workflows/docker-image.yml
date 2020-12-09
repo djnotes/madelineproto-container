@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with: 
-        repo-token: ${{secrets.GHCR_LOGIN}}
+        token: ${{secrets.GHCR_LOGIN}}
     - name: Build the Docker image
 #       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       run: docker build -t ghcr.io/djnotes/madelineproto:latest .
