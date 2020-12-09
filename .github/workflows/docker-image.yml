@@ -15,12 +15,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with: 
-        token: ${{secrets.GHCR_LOGIN}}
+
     - name: Build the Docker image
 #       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       run: docker build -t ghcr.io/djnotes/madelineproto:latest .
     # - name: Authenticate in the Workflow
     #   run: echo $GITHUB_TOKEN | docker login ghcr.io -u djnotes --password-stdin
     - name: Push the Docker image
+      with: 
+        token: ${{secrets.GHCR_LOGIN}}
       run: docker push ghcr.io/djnotes/madelineproto:latest
