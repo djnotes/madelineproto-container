@@ -1,5 +1,8 @@
 <?php
      
+     include __DIR__ . '/vendor/autoload.php';
+
+
 
      print_r($argv);
 
@@ -11,18 +14,18 @@
 
     $username = $argv[1];
 
-     if (!file_exists('madeline.php')){
-         copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
-     }
+    //  if (!file_exists('madeline.php')){
+    //      copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
+    //  }
       
-     include 'madeline.php';
+    //  include 'madeline.php';
       
       
       
      use \danog\MadelineProto\API;
       
       
-     $api = new API('session.madeline');
+     $api = new API('/app/session/session.madeline');
       
      $api->async(true);
       
@@ -32,7 +35,7 @@
          yield $api->start();
          
          try{
-             yield $api->messages->sendMessage(['peer' => $username, 'message' => 'Hello from MadelineProto']);
+             yield $api->messages->sendMessage(['peer' => $username, 'message' => 'Hello from MadelineProto Container']);
          }catch(\danog\MadelineProto\Exception $e){
              echo $e->getMessage();
          }

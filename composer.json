@@ -1,0 +1,7 @@
+{
+    "name": "powergame/madelineproto",
+    "description": "Bot skeleton using PHP and MadelineProto",
+    "require":{
+        "danog/madelineproto": "dev-master"
+    }
+}

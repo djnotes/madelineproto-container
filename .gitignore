@@ -1,4 +1,6 @@
 *.phar
 *.phar.version
 *.madeline
-*.lock
+*.log
+vendor/
+session/
