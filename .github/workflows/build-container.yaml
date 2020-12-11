@@ -24,8 +24,12 @@ jobs:
     - name: Build and Push the Container image to GHCR
       uses: docker/build-push-action@v2
       with: 
-        username: ${{github.actor}}
-        password: ${{secrets.GHCR_LOGIN}}
-        registry: ghcr.io
-        repository: djnotes/madelineproto-container/madelineproto-container
+        push: true
+        tags: djnotes/madelineproto-container:latest
+        secrets: |
+          GHRC_LOGIN: ${{secrets.GHCR_LOGIN}}
+        # username: ${{github.actor}}
+        # password: ${{secrets.GHCR_LOGIN}}
+        # registry: ghcr.io
+        # repository: djnotes/madelineproto-container/madelineproto-container
 
