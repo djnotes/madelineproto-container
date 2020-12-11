@@ -27,5 +27,5 @@ jobs:
         username: ${{github.actor}}
         password: ${{secrets.GHCR_LOGIN}}
         registry: ghcr.io
-        repository: djnotes/madelineproto-container
+        repository: djnotes/madelineproto-container/madelineproto-container
 
