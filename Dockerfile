@@ -22,7 +22,7 @@ RUN composer install  --no-interaction
 
 
 
-ENTRYPOINT ["php", "/app/bot.php"]
+ENTRYPOINT ["php", "/app/test.php"]
 
 CMD ["@johndoe0x2"]
 
