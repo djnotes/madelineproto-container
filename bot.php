@@ -35,7 +35,7 @@
          yield $api->start();
          
          try{
-             yield $api->messages->sendMessage(['peer' => $username, 'message' => 'Hello from MadelineProto Container']);
+             yield $api->messages->sendMessage(['peer' => $username, 'message' => 'Hello from MadelineProto Container 😎']);
          }catch(\danog\MadelineProto\Exception $e){
              echo $e->getMessage();
          }
