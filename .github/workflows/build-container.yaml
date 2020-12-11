@@ -14,22 +14,14 @@ jobs:
         
 
     steps:
-    - uses: actions/checkout@v2
-
-#     - name: Build the Docker image
-# #       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-#       run: docker build -t ghcr.io/djnotes/madelineproto-container:latest .
-    # - name: Authenticate in the Workflow
-    #   run: echo $GITHUB_TOKEN | docker login ghcr.io -u djnotes --password-stdin
-    - name: Build and Push the Container image to GHCR
-      uses: docker/build-push-action@v2
-      with: 
-        push: true
-        tags: djnotes/madelineproto-container:latest
-        secrets: |
-          GHRC_LOGIN: ${{secrets.GHCR_LOGIN}}
-        # username: ${{github.actor}}
-        # password: ${{secrets.GHCR_LOGIN}}
-        # registry: ghcr.io
-        # repository: djnotes/madelineproto-container/madelineproto-container
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_LOGIN }}
+          registry: ghcr.io
+          repository: djnotes/madelineproto-container
+          tag_with_ref: true
 
