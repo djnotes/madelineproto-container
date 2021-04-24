@@ -34,4 +34,4 @@ docker run --rm --name mycontainer -v `pwd`:/app:Z powergame/madelineproto
 ```
 
 
-*Note that this image has not affiliated with or endorsed by the [MadelineProto](https://github.com/danog/MadelineProto) project*
+*Note that this image is not affiliated with or endorsed by the [MadelineProto](https://github.com/danog/MadelineProto) project*
