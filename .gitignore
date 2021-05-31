@@ -4,3 +4,6 @@
 *.log
 vendor/
 session/
+.settings/org.eclipse.wst.validation.prefs
+.buildpath
+.project

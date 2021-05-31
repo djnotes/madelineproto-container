@@ -14,18 +14,20 @@
 
     $username = $argv[1];
 
-    //  if (!file_exists('madeline.php')){
+    //  if (!file_exists(__DIR__ . '/madeline.php')){
     //      copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
     //  }
       
-    //  include 'madeline.php';
+    //  include __DIR__ . '/madeline.php';
       
       
       
      use \danog\MadelineProto\API;
       
       
-     $api = new API('/app/session/session.madeline');
+     $api = new API('session/session.madeline');
+//      api_id = 1314569
+// api_hash = a053626991f848b70849a85f0effcaf2
       
      $api->async(true);
       
