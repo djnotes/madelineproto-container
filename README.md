@@ -3,13 +3,15 @@
 ## Features 
 - An easy way to get started with MadelineProto.
 - All the MadelineProto requirements are already installed in this image.
--  You can use this image with Docker or Podman. GitHub hosts the code, but the image is on Docker Hub.   
+-  You can use this image with Docker or Podman. 
+- Container image available from both Docker Hub and GHCR
 
 To get started run:  
-1- Create a project directory like myproject  
-2- Go to the project directory `cd myproject`   
-3- Create a session directory: `mkdir session`  
-4- Run the following command:   
+1 - Create a project directory like myproject  
+2 - Go to the project directory `cd myproject`    
+3 - Create a session directory: `mkdir session`   
+4 - Run the following command:   
+
 ```
 
 docker run  --rm --name mycontainer -ti -v `pwd`:/app:Z  powergame/madelineproto your_telegram_username

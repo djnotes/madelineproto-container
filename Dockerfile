@@ -16,7 +16,7 @@ COPY   .  /app
 WORKDIR /app
 
 #Install dependencies mentioned in composer.json and composer.lock
-# RUN composer install  --no-interaction
+RUN composer install  --no-interaction
 
 
 
