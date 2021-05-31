@@ -1,0 +1,35 @@
+name: Docker Image CI
+
+on: [push]
+  # pull_request:
+  #   branches: [ master ]
+
+jobs:
+
+  Docker-Build-Push:
+
+    runs-on: ubuntu-latest
+        
+
+    steps:
+      - run: |
+          echo "The job was successfully triggered by the ${{ github.event_name }} event."
+          echo "Job is running on ${{ runner.os }} hosted by GitHub."
+          echo "Branch name is ${{ github.ref }}."
+          echo "Commit that triggered the job: $GITHUB_SHA"
+          
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - run: 
+          echo "${{ github.repository }} has been cloned to the runner." 
+
+      - name: Build and Push to GitHub Container Registry
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: madelineproto
+          tags: latest
+          registry: ghcr.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PAT }}
+
