@@ -1,7 +1,7 @@
 {
-    "name": "powergame/madelineproto",
+    "name": "djnotes/madelineproto-container",
     "description": "Bot skeleton using PHP and MadelineProto",
     "require":{
-        "danog/madelineproto": "dev-master"
+        "danog/madelineproto": "^7"
     }
 }
