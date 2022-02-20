@@ -2,7 +2,7 @@ version: "3.0"
 
 services: 
     bot:
-        image: madeline
+        image: ghcr.io/djnotes/madelineproto-container:latest
     
         command: djnotes #replace with your username
 

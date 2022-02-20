@@ -14,7 +14,7 @@ To get started run:
 
 ```
 
-docker run  --rm --name mycontainer -ti -v `pwd`:/app:Z  powergame/madelineproto your_telegram_username
+docker run  --rm --name mycontainer -ti -v `pwd`:/app:Z  ghcr.io/djnotes/madelineproto-container your_telegram_username
 
 ```  
 
@@ -26,13 +26,13 @@ To run a custom script, just put it in the current directory and run the followi
 
 
 ```
-docker run  --rm --name mycontainer -ti -v `pwd`:/app:Z  --entrypoint php powergame/madelineproto your_bot_script.php
+docker run  --rm --name mycontainer -ti -v `pwd`:/app:Z  --entrypoint php ghcr.io/djnotes/madelineproto-container  your_bot_script.php
 ```
 
-Or to do it in a more simpler way, just name your bot script bot.php and mount it along with other scripts into the container like this:   
+Or to do it in a simpler way, just name your bot script bot.php and mount it along with other scripts into the container like this:   
 
 ```
-docker run --rm --name mycontainer -v `pwd`:/app:Z powergame/madelineproto
+docker run --rm --name mycontainer -v `pwd`:/app:Z ghcr.io/djnotes/madelineproto-container 
 ```
 
 
