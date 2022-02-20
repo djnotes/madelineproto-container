@@ -3,7 +3,8 @@
 *.madeline
 *.log
 vendor/
-session/
+composer.lock
+session/session.*
 .settings/org.eclipse.wst.validation.prefs
 .buildpath
 .project

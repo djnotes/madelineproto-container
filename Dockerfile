@@ -29,12 +29,6 @@ WORKDIR /app
 RUN composer install  --no-interaction
 
 
-
-
-
-ENTRYPOINT ["php", "/app/bot.php"]
-
-CMD ["@johndoe"]
-
+CMD [ "/bin/php", "app.php" ]
 
 
