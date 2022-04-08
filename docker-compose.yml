@@ -4,7 +4,6 @@ services:
     bot:
         image: ghcr.io/djnotes/madelineproto-container:latest
     
-        command: djnotes #replace with your username
 
         volumes:
             # - ./session:/app/session
@@ -14,8 +13,8 @@ services:
         # entrypoint: 
         #     - php
         #     - /app/bot.php
-        command: 
-            - djnotes
+        # command: 
+        #    - djnotes
 
         stdin_open: true
         tty: true

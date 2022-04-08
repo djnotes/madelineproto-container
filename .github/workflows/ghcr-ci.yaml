@@ -4,6 +4,9 @@ on: [push]
   # pull_request:
   #   branches: [ master ]
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 jobs:
 
   Docker-Build-Push:
@@ -26,9 +29,9 @@ jobs:
       - name: Build and Push to GitHub Container Registry
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: madelineproto
+          image: ${{ env.IMAGE_NAME }} 
           tags: latest
-          registry: ghcr.io
+          registry: ${{ env.REGISTRY }} 
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PAT }}
