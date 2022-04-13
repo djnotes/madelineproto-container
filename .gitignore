@@ -4,7 +4,7 @@
 *.log
 vendor/
 composer.lock
-session/session.*
+session/
 .settings/org.eclipse.wst.validation.prefs
 .buildpath
 .project
