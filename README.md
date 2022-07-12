@@ -13,7 +13,7 @@ You can use the image in several ways:
 Run the following command:  
 
 ```
-docker run  --rm --name mycontainer -ti -v `pwd`/session:/app/session:Z  ghcr.io/djnotes/madelineproto-container
+docker run  --rm --name mycontainer -ti -v `pwd`/session:/app/session:Z  ghcr.io/djnotes/madelineproto-container:main
 ```
 This logs you into your Telegram account and initializes the MadelineProto login session file. It also gets a username to send it a Welcome message, thus showing you that the image actually worked!
 
@@ -22,7 +22,7 @@ This logs you into your Telegram account and initializes the MadelineProto login
 Run the following command to run your custom PHP MadelineProto bot script using the MadelineProto container image. 
 
 ```
-docker run  --rm --name mycontainer -ti -v `pwd`/session:/app/session:Z -v `pwd`/app.php:/app/app.php  ghcr.io/djnotes/madelineproto-container php your_script.php
+docker run  --rm --name mycontainer -ti -v `pwd`/session:/app/session:Z -v `pwd`/app.php:/app/app.php  ghcr.io/djnotes/madelineproto-container:main php your_script.php
 ```  
 
 This will create a container from the above image and then run your PHP script 
@@ -32,7 +32,7 @@ This will create a container from the above image and then run your PHP script
 If you want to use the image for local development on your machine, then use the following command:  
 
 ```
-docker run  --rm --name mycontainer -ti -v `pwd`:/app:Z ghcr.io/djnotes/madelineproto-container bash
+docker run  --rm --name mycontainer -ti -v `pwd`:/app:Z ghcr.io/djnotes/madelineproto-container:main bash
 ```
 This will give you a bash terminal, where all your development files and scripts are available for you to edit and run on the fly. 
 

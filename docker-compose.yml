@@ -2,7 +2,7 @@ version: "3.0"
 
 services: 
     bot:
-        image: ghcr.io/djnotes/madelineproto-container:latest
+        image: ghcr.io/djnotes/madelineproto-container:main
     
 
         volumes:
