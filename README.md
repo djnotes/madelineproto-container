@@ -1,3 +1,5 @@
+![container build](https://github.com/djnotes/madelineproto-container/actions/workflows/ghcr-ci.yaml/badge.svg)
+
 # MadelineProto Container Image
 Container (Docker) image with MadelineProto pre-installed. 
 
