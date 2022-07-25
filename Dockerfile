@@ -15,6 +15,6 @@ WORKDIR /app
 RUN composer install  --no-interaction
 
 
-CMD [ "/bin/php", "app.php" ]
+CMD [ "php", "app.php" ]
 
 
