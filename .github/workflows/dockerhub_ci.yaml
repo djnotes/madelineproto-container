@@ -2,6 +2,7 @@ name: Docker Hub Image CI
 
 on: [push]
 env:
+  REGISTRY: docker.io
   DOCKERHUB_USERNAME: powergame
   IMAGE_NAME: madelineproto-image
 
@@ -26,26 +27,45 @@ jobs:
             type=semver,pattern={{major}}
             type=sha
 
-      - name: Log In to Docker Hub
-        uses: docker/login-action@v1
+      # - name: Log In to Docker Hub
+      #   uses: docker/login-action@v1
+      #   with:
+      #     username: ${{ env.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_PAT }}
+
+      # - name: Build and Push to Docker Hub
+      #   id: build-push
+      #   uses: docker/build-push-action@v3
+      #   with: 
+      #     file: ./Containerfile
+      #     push: true
+      #     tags: ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest ${{ steps.meta.outputs.tags }}
+      #     labels: ${{ steps.meta.outputs.labels }}
+      - name: Buildah Build
+        id: build-image
+        uses: redhat-actions/buildah-build@v2
         with:
+          image: ${{ env.IMAGE_NAME }}
+          tags: latest ${{ github.sha }}
+          containerfiles: |
+            ./Containerfile
+      
+      - name: Push to registry
+        id: push-image
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: ${{ steps.build-image.outputs.image }}
+          tags: ${{ steps.build-image.outputs.tags }}
+          registry: ${{ env.REGISTRY }}
           username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PAT }}
 
-      - name: Build and Push to Docker Hub
-        id: build-push
-        uses: docker/build-push-action@v3
-        with: 
-          file: ./Containerfile
-          push: true
-          tags: ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
       - name: Echo Outputs
         run: |
           echo "Image built and pushed."
-          echo "Image ID: ${{ steps.build-push.outputs.imageid }}"
-          echo "Image Digetst: ${{ steps.build-push.ouputs.digest }}"
-          echo "Image metadata: ${{ steps.build-push.outputs.metadata }}"
+          # echo "Image ID: ${{ steps.build-push.outputs.imageid }}"
+          # echo "Image Digetst: ${{ steps.build-push.ouputs.digest }}"
+          # echo "Image metadata: ${{ steps.build-push.outputs.metadata }}"
           echo "Image labels: ${{ steps.meta.outputs.labels }}"
 
       
