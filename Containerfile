@@ -1,4 +1,4 @@
-FROM php:alpine 
+FROM docker.io/php:alpine 
 
 
 
