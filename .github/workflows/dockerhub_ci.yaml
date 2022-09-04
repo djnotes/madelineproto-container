@@ -4,7 +4,7 @@ on: [push]
 env:
   REGISTRY: docker.io
   DOCKERHUB_USERNAME: powergame
-  IMAGE_NAME: madelineproto-image
+  IMAGE_NAME: powergame/madelineproto
 
 jobs:
   DockerHub-Build-Push: 
