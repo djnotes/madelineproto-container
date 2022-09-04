@@ -19,7 +19,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
+            ${{ env.IMAGE_NAME }}
           tags: |
             type:ref,event=branch
             type=semver,pattern={{version}}
@@ -63,9 +63,8 @@ jobs:
       - name: Echo Outputs
         run: |
           echo "Image built and pushed."
-          # echo "Image ID: ${{ steps.build-push.outputs.imageid }}"
-          # echo "Image Digetst: ${{ steps.build-push.ouputs.digest }}"
-          # echo "Image metadata: ${{ steps.build-push.outputs.metadata }}"
+          echo "Image : ${{ steps.build-imagee.outputs.image }}"
+          echo "Image Tags: ${{ steps.build-image.ouputs.tags }}"
           echo "Image labels: ${{ steps.meta.outputs.labels }}"
 
       
