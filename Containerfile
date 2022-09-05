@@ -15,6 +15,6 @@ WORKDIR /app
 RUN composer install  --no-interaction
 
 
-CMD [ "php", "app.php" ]
+CMD [ "echo", "Hello from MadelineProto Container Image" ]
 
 
