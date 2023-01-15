@@ -8,6 +8,7 @@ Container (Docker) image with MadelineProto pre-installed.
 - All the MadelineProto requirements are already installed in this image.
 - You can use this image with `docker` or `podman` CLI tools. 
 - Container image available from both Docker Hub and GHCR
+- You can use this image for one-time script executions
 
 ## Image Registries
 The image is available in both the following registries:  
