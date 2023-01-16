@@ -8,7 +8,7 @@
      Please enter a Telegram username (preferrably yours):");
 
 
-     $api = new API('session/session.madeline');
+     $api = new API('/app/session/session.madeline');
 
     
           
