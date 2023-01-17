@@ -13,7 +13,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 
 
 #Copy project contents
-COPY   .  /app 
+COPY   .  /app
 WORKDIR /app
 
 #Install dependencies mentioned in composer.json and composer.lock
