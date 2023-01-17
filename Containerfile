@@ -1,4 +1,4 @@
-FROM docker.io/php:alpine 
+FROM docker.io/php:8.2.1-cli-alpine
 
 
 
