@@ -2,7 +2,7 @@
 [![Docker Hub Image CI](https://github.com/djnotes/madelineproto-image/actions/workflows/dockerhub_ci.yaml/badge.svg)](https://github.com/djnotes/madelineproto-image/actions/workflows/dockerhub_ci.yaml)
 
 # MadelineProto Container Image
-Container (Docker) image with MadelineProto pre-installed. 
+Alpine-based container image with MadelineProto pre-installed. 
 
 ## Features 
 - An easy way to get started with MadelineProto, and can be used for development and production.
