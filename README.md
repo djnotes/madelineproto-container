@@ -1,5 +1,5 @@
-[![container build](https://github.com/djnotes/madelineproto-image/actions/workflows/ghcr-ci.yaml/badge.svg)](https://github.com/djnotes/madelineproto-image/actions/workflows/ghcr-ci.yaml)
-[![Docker Hub Image CI](https://github.com/djnotes/madelineproto-image/actions/workflows/dockerhub_ci.yaml/badge.svg)](https://github.com/djnotes/madelineproto-image/actions/workflows/dockerhub_ci.yaml)
+[![container build](https://github.com/djnotes/madelineproto-container/actions/workflows/ghcr-ci.yaml/badge.svg)](https://github.com/djnotes/madelineproto-container/actions/workflows/ghcr-ci.yaml)
+[![Docker Hub Image CI](https://github.com/djnotes/madelineproto-container/actions/workflows/dockerhub_ci.yaml/badge.svg)](https://github.com/djnotes/madelineproto-container/actions/workflows/dockerhub_ci.yaml)
 
 # MadelineProto Container Image
 Alpine-based container image with MadelineProto pre-installed. 
@@ -14,19 +14,19 @@ Alpine-based container image with MadelineProto pre-installed.
 ## Image Registries
 The image is available in both the following registries:  
 
-- ghcr.io/djnotes/madelineproto-image:latest
+- ghcr.io/djnotes/madelineproto-container:latest
 - docker.io/powergame/madelineproto:latest
 
 ## Run
 To run your MadelineProto bot script, use the  container image like this:
 
 ```
-podman run -v $PWD:/app ghcr.io/djnotes/madelineproto-image:latest php your_script.php 
+podman run -v $PWD:/app ghcr.io/djnotes/madelineproto-container:latest php your_script.php 
 ```
 Or if you are using docker CLI,
 
 ```
-docker run -v $PWD:/app ghcr.io/djnotes/madelineproto-image:latest php your_script.php 
+docker run -v $PWD:/app ghcr.io/djnotes/madelineproto-container:latest php your_script.php 
 ```
 
 *If you do not mount a session directory to the container, it will create the session file inside the container. So, you should mount a session directory when running the image.*
