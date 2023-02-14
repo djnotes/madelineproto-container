@@ -2,7 +2,7 @@
     "name": "djnotes/madelineproto-container",
     "description": "Bot skeleton using PHP and MadelineProto",
     "require":{
-        "danog/madelineproto": "8.0.0-beta47"
+        "danog/madelineproto": "8.0.0-beta50"
     },
     "minimum-stability": "dev"
 }
