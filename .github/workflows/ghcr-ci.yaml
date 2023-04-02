@@ -1,4 +1,4 @@
-name: GitHub Container Registry Action
+name: MadelineProto Container Image GHCR CI
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -8,11 +8,11 @@ name: GitHub Container Registry Action
 on:
   # Commenting out because want image rebuild only on push
   schedule:
-    - cron: '40 21 * * *'
+    - cron: '0 3 * * 5' # Every Friday
   push:
     branches: [ main ]
     # Publish semver tags as releases.
-    tags: [ 'v*' ]
+    tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ main ]
 
@@ -20,7 +20,8 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{ github.actor }}/madelineproto-image
+  CONTAINERFILE: Containerfile
   # IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 
@@ -44,15 +45,20 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: ${{ env.IMAGE_NAME }}
-          tags: latest ${{ github.sha }}  ${{ github.ref_name }}
+          tags: latest ${{ github.sha }} ${{ github.ref_name }}
           containerfiles: |
-            ./Containerfile
+            ${{ env.CONTAINERFILE }}
+
+      - name: Echo Build Outputs
+        run: |
+          echo "${{ toJson(steps.build-image.outputs) }}"
+          
       - name: Push to registry
         id: push
         uses: redhat-actions/push-to-registry@v2
         with:
           image: ${{ steps.build-image.outputs.image }}
-          tags: ${{ steps.build-image.outputs.tags }}
+          tags: ${{ steps.build-image.outputs.tags }} 
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
